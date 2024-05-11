@@ -10,13 +10,13 @@ services:
       - TZ={{ TIMEZONE }}
     volumes:
       - radarr_config:/config
-      - {{ PATH_TO_MOVIES }}:/movies # Path to your Plex movies folder
-      - {{ PATH_TO_DOWNLOADS_DIR }}:/downloads # Path to your qBittorrent downloads folder
+      #- {{ PATH_TO_MOVIES }}:/movies # Path to your Plex movies folder
+      #- {{ PATH_TO_DOWNLOADS_DIR }}:/downloads # Path to your qBittorrent downloads folder
     ports:
       - 7878:7878
     restart: unless-stopped
   
-  onarr:
+  sonarr:
     image: lscr.io/linuxserver/sonarr:latest
     container_name: sonarr
     environment:

@@ -32,7 +32,14 @@
       "repository": {
         "url": "https://github.com/AxelFooley/portainer-app-templates",
         "stackfile": "stacks/Autobrr/docker-stack.yml"
-      }
+      },
+      "env": [
+        {
+          "name": "TZ",
+          "label": "Timezone Default: Europe/Rome",
+          "default": "Europe/Rome"
+        }
+      ]
     },
     {
       "type": 3,
@@ -47,7 +54,14 @@
       "repository": {
         "url": "https://github.com/AxelFooley/portainer-app-templates",
         "stackfile": "stacks/Immich/docker-stack.yml"
-      }
+      },
+      "env": [
+        {
+          "name": "PATH_TO_PHOTOS",
+          "label": "Host path to mount as photo library into the container",
+          "default": "/var/lib/immich/photos"
+        }
+      ]
     },
     {
       "type": 3,
@@ -62,7 +76,29 @@
       "repository": {
         "url": "https://github.com/AxelFooley/portainer-app-templates",
         "stackfile": "stacks/Kometa/docker-stack.yml"
-      }
+      },
+      "env": [
+        {
+          "name": "TZ",
+          "label": "Timezone Default: Europe/Rome",
+          "default": "Europe/Rome"
+        },
+        {
+          "name": "KOMETA_CONFIG",
+          "label": "Host path for storing Kometa configuration",
+          "default": "/var/lib/kometa/config"
+        },
+        {
+          "name": "KOMETA_TIME",
+          "label": "Time of the day to run Kometa (HH:MM) Default: 03:00",
+          "default": "03:00"
+        },
+        {
+          "name": "KOMETA_RUN",
+          "label": "Run the script on startup Default: False",
+          "default": "False"
+        }
+      ]
     },
     {
       "type": 3,
@@ -77,7 +113,19 @@
       "repository": {
         "url": "https://github.com/AxelFooley/portainer-app-templates",
         "stackfile": "stacks/NPM/docker-stack.yml"
-      }
+      },
+      "env": [
+        {
+          "name": "PATH_TO_DATA",
+          "label": "Host path for storing NPM configuration and data",
+          "default": "/var/lib/npm/data"
+        },
+        {
+          "name": "PATH_TO_LETSENCRYPT",
+          "label": "Run database migrations on startup Default: True",
+          "default": "/var/lib/npm/letsencrypt"
+        }
+      ]
     },
     {
       "type": 3,

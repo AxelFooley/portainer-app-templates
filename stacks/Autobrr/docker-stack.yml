@@ -7,7 +7,7 @@ services:
     restart: unless-stopped
     user: 1000:1000
     environment:
-      - TZ={{ TIMEZONE}}
+      - TZ=${TZ}
     volumes:
       - autobrr-config:/config
     ports:
