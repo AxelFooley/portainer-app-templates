@@ -1,216 +1,248 @@
 {
   "version": "3",
-  "templates": [  
+  "templates": [
     {
-    "type": "1",
-    "title": "Watchtower",
-    "description": "Automatically update running Docker containers",
-    "categories": ["docker"],
-    "platform": "linux",
-    "logo": "https://github.com/containrrr/watchtower/blob/v1.0.0/gopher-watchtower.png?raw=true",
-    "image": "containrrr/watchtower",
-    "volumes": [
-      {
-        "container": "/var/run/docker.sock",
-        "bind": "/var/run/docker.sock",
-        "readonly": true
-      } 
-    ]
+      "type": "1",
+      "title": "Watchtower",
+      "description": "Automatically update running Docker containers",
+      "categories": [
+        "docker"
+      ],
+      "platform": "linux",
+      "logo": "https://github.com/containrrr/watchtower/blob/v1.0.0/gopher-watchtower.png?raw=true",
+      "image": "containrrr/watchtower",
+      "volumes": [
+        {
+          "container": "/var/run/docker.sock",
+          "bind": "/var/run/docker.sock",
+          "readonly": true
+        }
+      ]
     },
     {
-    "type": "3",
-    "title": "Autobrr",
-    "description": "Automatically download torrents from RSS feeds",
-    "note": "Deploys an Autobrr container.",
-    "categories": ["downloads"],
-    "platform": "linux",
-    "logo": "https://autobrr.com/img/logo.png",
-    "repository": {
-      "url": "https://github.com/AxelFooley/portainer-app-templates",
-      "stackfile": "stacks/Autobrr/docker-stack.yml"
-    }
+      "type": "3",
+      "title": "Autobrr",
+      "description": "Automatically download torrents from RSS feeds",
+      "note": "Deploys an Autobrr container.",
+      "categories": [
+        "downloads"
+      ],
+      "platform": "linux",
+      "logo": "https://autobrr.com/img/logo.png",
+      "repository": {
+        "url": "https://github.com/AxelFooley/portainer-app-templates",
+        "stackfile": "stacks/Autobrr/docker-stack.yml"
+      }
     },
     {
-    "type": "3",
-    "title": "Immich",
-    "description": "Immich is a simple and lightweight image hosting service",
-    "note": "Deploys an Immich instance.",
-    "categories": ["media"],
-    "platform": "linux",
-    "logo": "https://play-lh.googleusercontent.com/nJsRIdtaot1-FKH3kiRem4kjqUU1-_0hd_64qZH0BgtzUecYfWLCDfpk2nNVul8hOrw",
-    "repository": {
-      "url": "https://github.com/AxelFooley/portainer-app-templates",
-      "stackfile": "stacks/Immich/docker-stack.yml"
-    }
+      "type": "3",
+      "title": "Immich",
+      "description": "Immich is a simple and lightweight image hosting service",
+      "note": "Deploys an Immich instance.",
+      "categories": [
+        "media"
+      ],
+      "platform": "linux",
+      "logo": "https://play-lh.googleusercontent.com/nJsRIdtaot1-FKH3kiRem4kjqUU1-_0hd_64qZH0BgtzUecYfWLCDfpk2nNVul8hOrw",
+      "repository": {
+        "url": "https://github.com/AxelFooley/portainer-app-templates",
+        "stackfile": "stacks/Immich/docker-stack.yml"
+      }
     },
     {
-    "type": "3",
-    "title": "Kometa",
-    "description": "Kometa formerly known as Plex Meta Manager is a tool to manage your Plex library metadata.",
-    "note": "Deploys Kometa",
-    "categories": ["media"],
-    "platform": "linux",
-    "logo": "https://kometa.wiki/en/nightly/assets/logo-full.png",
-    "repository": {
-      "url": "https://github.com/AxelFooley/portainer-app-templates",
-      "stackfile": "stacks/Kometa/docker-stack.yml"
-    }
+      "type": "3",
+      "title": "Kometa",
+      "description": "Kometa formerly known as Plex Meta Manager is a tool to manage your Plex library metadata.",
+      "note": "Deploys Kometa",
+      "categories": [
+        "media"
+      ],
+      "platform": "linux",
+      "logo": "https://kometa.wiki/en/nightly/assets/logo-full.png",
+      "repository": {
+        "url": "https://github.com/AxelFooley/portainer-app-templates",
+        "stackfile": "stacks/Kometa/docker-stack.yml"
+      }
     },
     {
-    "type": "3",
-    "title": "Nginx Proxy Manager",
-    "description": "Nginx Proxy Manager is a reverse proxy management system that is based on Nginx.",
-    "note": "Deploys NPM",
-    "categories": ["media"],
-    "platform": "linux",
-    "logo": "https://nginxproxymanager.com/logo.svg",
-    "repository": {
-      "url": "https://github.com/AxelFooley/portainer-app-templates",
-      "stackfile": "stacks/NPM/docker-stack.yml"
-    }
+      "type": "3",
+      "title": "Nginx Proxy Manager",
+      "description": "Nginx Proxy Manager is a reverse proxy management system that is based on Nginx.",
+      "note": "Deploys NPM",
+      "categories": [
+        "media"
+      ],
+      "platform": "linux",
+      "logo": "https://nginxproxymanager.com/logo.svg",
+      "repository": {
+        "url": "https://github.com/AxelFooley/portainer-app-templates",
+        "stackfile": "stacks/NPM/docker-stack.yml"
+      }
     },
     {
-    "type": "3",
-    "title": "Paperless NGX",
-    "description": "Paperless-ngx is a document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper.",
-    "note": "Deploys Paperless NGX",
-    "categories": ["media"],
-    "platform": "linux",
-    "logo": "https://play-lh.googleusercontent.com/NF0cFPaWCf57S1-dvh4ZNP2WPIKSXKYIvZq6NWUtnP0U3DhfLOPdwgjd5SzC9JLebg",
-    "repository": {
-      "url": "https://github.com/AxelFooley/portainer-app-templates",
-      "stackfile": "stacks/Paperless-ngx/docker-stack.yml"
-    }
+      "type": "3",
+      "title": "Paperless NGX",
+      "description": "Paperless-ngx is a document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper.",
+      "note": "Deploys Paperless NGX",
+      "categories": [
+        "media"
+      ],
+      "platform": "linux",
+      "logo": "https://play-lh.googleusercontent.com/NF0cFPaWCf57S1-dvh4ZNP2WPIKSXKYIvZq6NWUtnP0U3DhfLOPdwgjd5SzC9JLebg",
+      "repository": {
+        "url": "https://github.com/AxelFooley/portainer-app-templates",
+        "stackfile": "stacks/Paperless-ngx/docker-stack.yml"
+      }
     },
     {
-    "type": "3",
-    "title": "Pihole",
-    "description": "Pi-hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network.",
-    "note": "Deploys Pihole and Unbound",
-    "categories": ["infra"],
-    "platform": "linux",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/8/88/Pi-hole_Logo_2.png",
-    "repository": {
-      "url": "https://github.com/AxelFooley/portainer-app-templates",
-      "stackfile": "stacks/Pihole/docker-stack.yml"
-    }
+      "type": "3",
+      "title": "Pihole",
+      "description": "Pi-hole is a Linux network-level advertisement and Internet tracker blocking application which acts as a DNS sinkhole and optionally a DHCP server, intended for use on a private network.",
+      "note": "Deploys Pihole and Unbound",
+      "categories": [
+        "infra"
+      ],
+      "platform": "linux",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/8/88/Pi-hole_Logo_2.png",
+      "repository": {
+        "url": "https://github.com/AxelFooley/portainer-app-templates",
+        "stackfile": "stacks/Pihole/docker-stack.yml"
+      }
     },
     {
-    "type": "3",
-    "title": "Plex",
-    "description": "Plex is a client-server media player system and software suite comprising two main components. The Plex Media Server desktop application runs on Windows, macOS, and Linux-compatibles including some types of NAS devices.",
-    "note": "Deploys Plex Media Server",
-    "categories": ["media"],
-    "platform": "linux",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Plex_logo_2022.svg/2560px-Plex_logo_2022.svg.png",
-    "repository": {
-      "url": "https://github.com/AxelFooley/portainer-app-templates",
-      "stackfile": "stacks/Plex/docker-stack.yml"
-    }
+      "type": "3",
+      "title": "Plex",
+      "description": "Plex is a client-server media player system and software suite comprising two main components. The Plex Media Server desktop application runs on Windows, macOS, and Linux-compatibles including some types of NAS devices.",
+      "note": "Deploys Plex Media Server",
+      "categories": [
+        "media"
+      ],
+      "platform": "linux",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Plex_logo_2022.svg/2560px-Plex_logo_2022.svg.png",
+      "repository": {
+        "url": "https://github.com/AxelFooley/portainer-app-templates",
+        "stackfile": "stacks/Plex/docker-stack.yml"
+      }
     },
     {
-    "type": "3",
-    "title": "qBittorrent",
-    "description": "qBittorrent is a free and open-source BitTorrent client that aims to be a good alternative to µTorrent.",
-    "note": "Deploys qBittorrent",
-    "categories": ["downloads"],
-    "platform": "linux",
-    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/New_qBittorrent_Logo.svg/1200px-New_qBittorrent_Logo.svg.png",
-    "repository": {
-      "url": "https://github.com/AxelFooley/portainer-app-templates",
-      "stackfile": "stacks/qBittorrent/docker-stack.yml"
-    }
+      "type": "3",
+      "title": "qBittorrent",
+      "description": "qBittorrent is a free and open-source BitTorrent client that aims to be a good alternative to µTorrent.",
+      "note": "Deploys qBittorrent",
+      "categories": [
+        "downloads"
+      ],
+      "platform": "linux",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/New_qBittorrent_Logo.svg/1200px-New_qBittorrent_Logo.svg.png",
+      "repository": {
+        "url": "https://github.com/AxelFooley/portainer-app-templates",
+        "stackfile": "stacks/qBittorrent/docker-stack.yml"
+      }
     },
     {
-    "type": "3",
-    "title": "Servarr",
-    "description": "Servarr is a collection of services for managing your media collection.",
-    "note": "Deploys Radarr, Sonarr, Prowlarr, Bazarr, Maintainerr, Recyclarr and FlareSolverr.",
-    "categories": ["media"],
-    "platform": "linux",
-    "logo": "https://github.com/Servarr/Wiki/raw/master/assets/servarr/servarr_dark_1024.png",
-    "repository": {
-      "url": "https://github.com/AxelFooley/portainer-app-templates",
-      "stackfile": "stacks/Servarr/docker-stack.yml"
-    }
+      "type": "3",
+      "title": "Servarr",
+      "description": "Servarr is a collection of services for managing your media collection.",
+      "note": "Deploys Radarr, Sonarr, Prowlarr, Bazarr, Maintainerr, Recyclarr and FlareSolverr.",
+      "categories": [
+        "media"
+      ],
+      "platform": "linux",
+      "logo": "https://github.com/Servarr/Wiki/raw/master/assets/servarr/servarr_dark_1024.png",
+      "repository": {
+        "url": "https://github.com/AxelFooley/portainer-app-templates",
+        "stackfile": "stacks/Servarr/docker-stack.yml"
+      }
     },
     {
-    "type": "3",
-    "title": "TeslaMate",
-    "description": "TeslaMate is a self-hosted data logger for your Tesla vehicle.",
-    "note": "Deploys the complete Teslamate stack.",
-    "categories": ["observability"],
-    "platform": "linux",
-    "logo": "https://docs.teslamate.org/img/logo.svg",
-    "repository": {
-      "url": "https://github.com/AxelFooley/portainer-app-templates",
-      "stackfile": "stacks/Teslamate/docker-stack.yml"
-    }
+      "type": "3",
+      "title": "TeslaMate",
+      "description": "TeslaMate is a self-hosted data logger for your Tesla vehicle.",
+      "note": "Deploys the complete Teslamate stack.",
+      "categories": [
+        "observability"
+      ],
+      "platform": "linux",
+      "logo": "https://docs.teslamate.org/img/logo.svg",
+      "repository": {
+        "url": "https://github.com/AxelFooley/portainer-app-templates",
+        "stackfile": "stacks/Teslamate/docker-stack.yml"
+      }
     },
     {
-    "type": "3",
-    "title": "TOR Relay",
-    "description": "TOR is a free software for enabling anonymous communication. The name is derived from an acronym for the original software project name \"The Onion Router\".",
-    "note": "Deploys a Tor Relay with OBFS4 protocol.",
-    "categories": ["infra"],
-    "platform": "linux",
-    "logo": "https://w7.pngwing.com/pngs/173/966/png-transparent-purple-onion-tor-browser-web-browser-onion-onion-routing-onion-food-leaf-plant-stem.png",
-    "repository": {
-      "url": "https://github.com/AxelFooley/portainer-app-templates",
-      "stackfile": "stacks/Tor-obfs4-bridge/docker-stack.yml"
-    }
+      "type": "3",
+      "title": "TOR Relay",
+      "description": "TOR is a free software for enabling anonymous communication. The name is derived from an acronym for the original software project name \"The Onion Router\".",
+      "note": "Deploys a Tor Relay with OBFS4 protocol.",
+      "categories": [
+        "infra"
+      ],
+      "platform": "linux",
+      "logo": "https://w7.pngwing.com/pngs/173/966/png-transparent-purple-onion-tor-browser-web-browser-onion-onion-routing-onion-food-leaf-plant-stem.png",
+      "repository": {
+        "url": "https://github.com/AxelFooley/portainer-app-templates",
+        "stackfile": "stacks/Tor-obfs4-bridge/docker-stack.yml"
+      }
     },
     {
-    "type": "3",
-    "title": "Tdarr Server Node (GPU Transcoding)",
-    "description": "Tdarr is a popular conditional transcoding application for processing large (or small) media libraries. The application comes in the form of a click-to-run web-app, which you run on your own device and access through a web browser.",
-    "note": "Deploys a Tdarr server with GPU transcoding support.",
-    "categories": ["media"],
-    "platform": "linux",
-    "logo": "https://docs.tdarr.io/img/favicon.ico",
-    "repository": {
-      "url": "https://github.com/AxelFooley/portainer-app-templates",
-      "stackfile": "stacks/Tdarr/docker-stack-server-gpu_node.yml"
-    }
+      "type": "3",
+      "title": "Tdarr Server Node (GPU Transcoding)",
+      "description": "Tdarr is a popular conditional transcoding application for processing large (or small) media libraries. The application comes in the form of a click-to-run web-app, which you run on your own device and access through a web browser.",
+      "note": "Deploys a Tdarr server with GPU transcoding support.",
+      "categories": [
+        "media"
+      ],
+      "platform": "linux",
+      "logo": "https://docs.tdarr.io/img/favicon.ico",
+      "repository": {
+        "url": "https://github.com/AxelFooley/portainer-app-templates",
+        "stackfile": "stacks/Tdarr/docker-stack-server-gpu_node.yml"
+      }
     },
     {
-    "type": "3",
-    "title": "Tdarr Server Node (CPU Transcoding)",
-    "description": "Tdarr is a popular conditional transcoding application for processing large (or small) media libraries. The application comes in the form of a click-to-run web-app, which you run on your own device and access through a web browser.",
-    "note": "Deploys a Tdarr server with CPU transcoding support.",
-    "categories": ["media"],
-    "platform": "linux",
-    "logo": "https://docs.tdarr.io/img/favicon.ico",
-    "repository": {
-      "url": "https://github.com/AxelFooley/portainer-app-templates",
-      "stackfile": "stacks/Tdarr/docker-stack-server-cpu_node.yml"
-    }
+      "type": "3",
+      "title": "Tdarr Server Node (CPU Transcoding)",
+      "description": "Tdarr is a popular conditional transcoding application for processing large (or small) media libraries. The application comes in the form of a click-to-run web-app, which you run on your own device and access through a web browser.",
+      "note": "Deploys a Tdarr server with CPU transcoding support.",
+      "categories": [
+        "media"
+      ],
+      "platform": "linux",
+      "logo": "https://docs.tdarr.io/img/favicon.ico",
+      "repository": {
+        "url": "https://github.com/AxelFooley/portainer-app-templates",
+        "stackfile": "stacks/Tdarr/docker-stack-server-cpu_node.yml"
+      }
     },
     {
-    "type": "3",
-    "title": "Tdarr Worker Node (GPU Transcoding)",
-    "description": "Tdarr is a popular conditional transcoding application for processing large (or small) media libraries. The application comes in the form of a click-to-run web-app, which you run on your own device and access through a web browser.",
-    "note": "Deploys a Tdarr worker node with GPU transcoding support.",
-    "categories": ["media"],
-    "platform": "linux",
-    "logo": "https://docs.tdarr.io/img/favicon.ico",
-    "repository": {
-      "url": "https://github.com/AxelFooley/portainer-app-templates",
-      "stackfile": "stacks/Tdarr/docker-stack-worker-gpu_node.yml"
-    }
+      "type": "3",
+      "title": "Tdarr Worker Node (GPU Transcoding)",
+      "description": "Tdarr is a popular conditional transcoding application for processing large (or small) media libraries. The application comes in the form of a click-to-run web-app, which you run on your own device and access through a web browser.",
+      "note": "Deploys a Tdarr worker node with GPU transcoding support.",
+      "categories": [
+        "media"
+      ],
+      "platform": "linux",
+      "logo": "https://docs.tdarr.io/img/favicon.ico",
+      "repository": {
+        "url": "https://github.com/AxelFooley/portainer-app-templates",
+        "stackfile": "stacks/Tdarr/docker-stack-worker-gpu_node.yml"
+      }
     },
     {
-    "type": "3",
-    "title": "Tdarr Worker Node (CPU Transcoding)",
-    "description": "Tdarr is a popular conditional transcoding application for processing large (or small) media libraries. The application comes in the form of a click-to-run web-app, which you run on your own device and access through a web browser.",
-    "note": "Deploys a Tdarr worker node with CPU transcoding support.",
-    "categories": ["media"],
-    "platform": "linux",
-    "logo": "https://docs.tdarr.io/img/favicon.ico",
-    "repository": {
-      "url": "https://github.com/AxelFooley/portainer-app-templates",
-      "stackfile": "stacks/Tdarr/docker-stack-worker-cpu_node.yml"
+      "type": "3",
+      "title": "Tdarr Worker Node (CPU Transcoding)",
+      "description": "Tdarr is a popular conditional transcoding application for processing large (or small) media libraries. The application comes in the form of a click-to-run web-app, which you run on your own device and access through a web browser.",
+      "note": "Deploys a Tdarr worker node with CPU transcoding support.",
+      "categories": [
+        "media"
+      ],
+      "platform": "linux",
+      "logo": "https://docs.tdarr.io/img/favicon.ico",
+      "repository": {
+        "url": "https://github.com/AxelFooley/portainer-app-templates",
+        "stackfile": "stacks/Tdarr/docker-stack-worker-cpu_node.yml"
+      }
     }
-    }
-]
+  ]
 }
