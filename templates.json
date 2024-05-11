@@ -245,7 +245,7 @@
           "name": "PLEX_PATH_TO_MOVIE_FOLDER",
           "label": "Host path to Movies folder",
           "default": "/var/lib/plex/movies"
-        },
+        }
       ]
     },
     {
@@ -431,7 +431,7 @@
       "repository": {
         "url": "https://github.com/AxelFooley/portainer-app-templates",
         "stackfile": "stacks/Tdarr/docker-stack-server-cpu_node.yml"
-      }.
+      },
       "env": [
         {
           "name": "TZ",
