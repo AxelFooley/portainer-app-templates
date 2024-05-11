@@ -7,11 +7,11 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ={{ TIMEZONE }}
+      - TZ=${TZ}
     volumes:
       - radarr_config:/config
-      #- {{ PATH_TO_MOVIES }}:/movies # Path to your Plex movies folder
-      #- {{ PATH_TO_DOWNLOADS_DIR }}:/downloads # Path to your qBittorrent downloads folder
+      - ${PATH_TO_MOVIES}:/movies # Path to your Plex movies folder
+      - ${PATH_TO_DOWNLOADS}:/downloads # Path to your qBittorrent downloads folder
     ports:
       - 7878:7878
     restart: unless-stopped
@@ -22,11 +22,11 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ={{ TIMEZONE }}
+      - TZ=${TZ}
     volumes:
       - sonarr_config:/config
-      - {{ PATH_TO_TV }}:/tv # Path to your Plex TV Shows folder
-      - {{ PATH_TO_DOWNLOADS_DIR }}:/downloads # Path to your qBittorrent downloads folder
+      - ${PATH_TO_TV}:/tv # Path to your Plex TV Shows folder
+      - ${PATH_TO_DOWNLOADS}:/downloads # Path to your qBittorrent downloads folder
     ports:
       - 8989:8989
     restart: unless-stopped
@@ -37,7 +37,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ={{ TIMEZONE }}
+      - TZ=${TZ}
     volumes:
       - prowlarr_config:/config
     ports:
@@ -52,7 +52,7 @@ services:
       - LOG_LEVEL=${LOG_LEVEL:-info}
       - LOG_HTML=${LOG_HTML:-false}
       - CAPTCHA_SOLVER=${CAPTCHA_SOLVER:-none}
-      - TZ={{ TIMEZONE }}
+      - TZ=${TZ}
     ports:
       - "${PORT:-8191}:8191"
     restart: unless-stopped
@@ -64,7 +64,7 @@ services:
     volumes:
       - recyclarr_config:/config
     environment:
-      - TZ={{ TIMEZONE }}
+      - TZ=${TZ}
   
   maintainerr:
     image: jorenn92/maintainerr:latest
@@ -72,7 +72,7 @@ services:
     volumes:
       - maintainerr_data/opt/data
     environment:
-      - TZ={{ TIMEZONE }}
+      - TZ=${TZ}
     ports:
       - 8154:80
     restart: unless-stopped
@@ -83,11 +83,11 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ={{ TIMEZONE }}
+      - TZ=${TZ}
     volumes:
       - bazarr_config:/config
-      - {{ PATH_TO_MOVIES }}:/movies #optional
-      - {{ PATH_TO_TV }}:/tv #optional
+      - ${PATH_TO_MOVIES}:/movies #optional
+      - ${PATH_TO_TV}:/tv #optional
     ports:
       - 6767:6767
     restart: unless-stopped

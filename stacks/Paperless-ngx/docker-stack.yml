@@ -54,15 +54,15 @@ services:
       - "8000:8000"
     volumes:
       - paperless-data:/usr/src/paperless/data
-      - {{ PATH_TO_MEDIA_DIR }}:/usr/src/paperless/media
-      - {{ PATH_TO_EXPORT_DIR }}:/usr/src/paperless/export
-      - {{ PATH_TO_CONSUME_DIR }}:/usr/src/paperless/consume
+      - ${PATH_TO_MEDIA_DIR}:/usr/src/paperless/media
+      - ${PATH_TO_EXPORT_DIR}:/usr/src/paperless/export
+      - ${PATH_TO_CONSUME_DIR}:/usr/src/paperless/consume
     environment:
       PAPERLESS_REDIS: redis://broker:6379
       PAPERLESS_DBHOST: db
       PAPERLESS_URL: "https://paperless.calliope.lol"
-      PAPERLESS_TIME_ZONE: "{{ TIMEZONE }}"
-      PAPERLESS_OCR_LANGUAGE: "{{ OCR_LANGUAGE }}"
+      PAPERLESS_TIME_ZONE: "${TZ}"
+      PAPERLESS_OCR_LANGUAGE: "${OCR_LANGUAGE}"
       PAPERLESS_OCR_USER_ARGS: '{"invalidate_digital_signatures": true}'
 
 volumes:

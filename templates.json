@@ -140,7 +140,34 @@
       "repository": {
         "url": "https://github.com/AxelFooley/portainer-app-templates",
         "stackfile": "stacks/Paperless-ngx/docker-stack.yml"
-      }
+      },
+      "env": [
+        {
+          "name": "TZ",
+          "label": "Timezone Default: Europe/Rome",
+          "default": "Europe/Rome"
+        },
+        {
+          "name": "PATH_TO_MEDIA_DIR",
+          "label": "Host path for storing Paperless NGX configuration and data",
+          "default": "/var/lib/paperless-ngx/data"
+        },
+        {
+          "name": "PATH_TO_EXPORT_DIR",
+          "label": "Host path for storing exported documents from Paperless NGX",
+          "default": "/var/lib/paperless-ngx/export"
+        },
+        {
+          "name": "PATH_TO_CONSUME_DIR",
+          "label": "Host path for importing documents into Paperless NGX",
+          "default": "/var/lib/paperless-ngx/consume"
+        },
+        {
+          "name": "OCR_LANGUAGE",
+          "label": "Default language for OCR Default: ita",
+          "default": "ita"
+        }
+      ]
     },
     {
       "type": 3,
@@ -155,7 +182,34 @@
       "repository": {
         "url": "https://github.com/AxelFooley/portainer-app-templates",
         "stackfile": "stacks/Pihole/docker-stack.yml"
-      }
+      },
+      "env": [
+        {
+          "name": "TZ",
+          "label": "Timezone Default: Europe/Rome",
+          "default": "Europe/Rome"
+        },
+        {
+          "name": "ADMIN_PASSWORD",
+          "label": "Web password for Pihole. Default: admin",
+          "default": "admin"
+        },
+        {
+          "name": "LISTEN_IP",
+          "label": "IP to listen on. Default: 127.0.0.1",
+          "default": "127.0.0.1"
+        },
+        {
+          "name": "EXTERNAL_DNS_SERVER",
+          "label": "External DNS server to use during startup. Default: 8.8.8.8",
+          "default": "8.8.8.8"
+        },
+        {
+          "name": "PATH_TO_UNBOUND_CONF_FILE",
+          "label": "Host path where Unbound configuration file is stored",
+          "default": "/var/lib/unbound/unbound.conf"
+        }
+      ]
     },
     {
       "type": 3,
@@ -170,7 +224,29 @@
       "repository": {
         "url": "https://github.com/AxelFooley/portainer-app-templates",
         "stackfile": "stacks/Plex/docker-stack.yml"
-      }
+      },
+      "env": [
+        {
+          "name": "TZ",
+          "label": "Timezone Default: Europe/Rome",
+          "default": "Europe/Rome"
+        },
+        {
+          "name": "PLEX_CLAIM",
+          "label": "Plex Claim Token",
+          "default": ""
+        },
+        {
+          "name": "PLEX_UPATH_TO_TV_FOLDER",
+          "label": "Host path to TV Shows folder",
+          "default": "/var/lib/plex/tv"
+        },
+        {
+          "name": "PLEX_PATH_TO_MOVIE_FOLDER",
+          "label": "Host path to Movies folder",
+          "default": "/var/lib/plex/movies"
+        },
+      ]
     },
     {
       "type": 3,
@@ -185,7 +261,24 @@
       "repository": {
         "url": "https://github.com/AxelFooley/portainer-app-templates",
         "stackfile": "stacks/qBittorrent/docker-stack.yml"
-      }
+      },
+      "env": [
+        {
+          "name": "TZ",
+          "label": "Timezone Default: Europe/Rome",
+          "default": "Europe/Rome"
+        },
+        {
+          "name": "PATH_TO_DOWNLOADS",
+          "label": "Host path to store downloaded files",
+          "default": "/var/lib/qbittorrent/downloads"
+        },
+        {
+          "name": "PATH_TO_TORRENTS",
+          "label": "Host path to store torrent files",
+          "default": "/var/lib/qbittorrent/torrents"
+        }
+      ]
     },
     {
       "type": 3,
@@ -200,7 +293,29 @@
       "repository": {
         "url": "https://github.com/AxelFooley/portainer-app-templates",
         "stackfile": "stacks/Servarr/docker-stack.yml"
-      }
+      },
+      "env": [
+        {
+          "name": "TZ",
+          "label": "Timezone Default: Europe/Rome",
+          "default": "Europe/Rome"
+        },
+        {
+          "name": "PATH_TO_MOVIES",
+          "label": "Host path to Radarr movies",
+          "default": "/var/lib/radarr/movies"
+        },
+        {
+          "name": "PATH_TO_TV",
+          "label": "Host path to Sonarr TV shows",
+          "default": "/var/lib/sonarr/tv"
+        },
+        {
+          "name": "PATH_TO_DOWNLOADS",
+          "label": "Host path where bittorrent downloads are stored",
+          "default": "/var/lib/qbittorrent/downloads"
+        }
+      ]
     },
     {
       "type": 3,
@@ -215,7 +330,14 @@
       "repository": {
         "url": "https://github.com/AxelFooley/portainer-app-templates",
         "stackfile": "stacks/Teslamate/docker-stack.yml"
-      }
+      },
+      "env": [
+        {
+          "name": "ENCRYPTION_KEY",
+          "label": "Encryption key to encrypt Tesla API token",
+          "default": "changeme"
+        }
+      ]
     },
     {
       "type": 3,
@@ -230,7 +352,29 @@
       "repository": {
         "url": "https://github.com/AxelFooley/portainer-app-templates",
         "stackfile": "stacks/Tor-obfs4-bridge/docker-stack.yml"
-      }
+      },
+      "env": [
+        {
+          "name": "NICKNAME",
+          "label": "Nickname for the Tor relay",
+          "default": "myrelay"
+        },
+        {
+          "name": "EMAIL",
+          "label": "Contact information for the Tor relay operator",
+          "default": "changeme@example.com"
+        },
+        {
+          "name": "OR_PORT",
+          "label": "Port for the Onion Router",
+          "default": "8080"
+        },
+        {
+          "name": "PT_PORT",
+          "label": "Port for the Pluggable Transport proxy",
+          "default": "9090"
+        }
+      ]
     },
     {
       "type": 3,
@@ -245,7 +389,34 @@
       "repository": {
         "url": "https://github.com/AxelFooley/portainer-app-templates",
         "stackfile": "stacks/Tdarr/docker-stack-server-gpu_node.yml"
-      }
+      },
+      "env": [
+        {
+          "name": "TZ",
+          "label": "Timezone Default: Europe/Rome",
+          "default": "Europe/Rome"
+        },
+        {
+          "name": "SERVER_IP",
+          "label": "IP address of the Tdarr server",
+          "default": "127.0.0.1"
+        },
+        {
+          "name": "NODE_NAME",
+          "label": "Name of this Tdarr node",
+          "default": "tdarrNode"
+        },
+        {
+          "name": "LIBRARY_PATH",
+          "label": "Host path to media library",
+          "default": "/var/lib/tdarr/library"
+        },
+        {
+          "name": "TRANSCODE_CACHE_PATH",
+          "label": "Host path for storing transcoding cache, this must be accessible by all Tdarr nodes and the Tdarr server.",
+          "default": "/var/lib/tdarr/transcode_cache"
+        }
+      ]
     },
     {
       "type": 3,
@@ -260,7 +431,34 @@
       "repository": {
         "url": "https://github.com/AxelFooley/portainer-app-templates",
         "stackfile": "stacks/Tdarr/docker-stack-server-cpu_node.yml"
-      }
+      }.
+      "env": [
+        {
+          "name": "TZ",
+          "label": "Timezone Default: Europe/Rome",
+          "default": "Europe/Rome"
+        },
+        {
+          "name": "SERVER_IP",
+          "label": "IP address of the Tdarr server",
+          "default": "127.0.0.1"
+        },
+        {
+          "name": "NODE_NAME",
+          "label": "Name of this Tdarr node",
+          "default": "tdarrNode"
+        },
+        {
+          "name": "LIBRARY_PATH",
+          "label": "Host path to media library",
+          "default": "/var/lib/tdarr/library"
+        },
+        {
+          "name": "TRANSCODE_CACHE_PATH",
+          "label": "Host path for storing transcoding cache, this must be accessible by all Tdarr nodes and the Tdarr server.",
+          "default": "/var/lib/tdarr/transcode_cache"
+        }
+      ]
     },
     {
       "type": 3,
@@ -275,7 +473,34 @@
       "repository": {
         "url": "https://github.com/AxelFooley/portainer-app-templates",
         "stackfile": "stacks/Tdarr/docker-stack-worker-gpu_node.yml"
-      }
+      },
+      "env": [
+        {
+          "name": "TZ",
+          "label": "Timezone Default: Europe/Rome",
+          "default": "Europe/Rome"
+        },
+        {
+          "name": "SERVER_IP",
+          "label": "IP address of the Tdarr server",
+          "default": "127.0.0.1"
+        },
+        {
+          "name": "NODE_NAME",
+          "label": "Name of this Tdarr node",
+          "default": "tdarrNode"
+        },
+        {
+          "name": "LIBRARY_PATH",
+          "label": "Host path to media library",
+          "default": "/var/lib/tdarr/library"
+        },
+        {
+          "name": "TRANSCODE_CACHE_PATH",
+          "label": "Host path for storing transcoding cache, this must be accessible by all Tdarr nodes and the Tdarr server.",
+          "default": "/var/lib/tdarr/transcode_cache"
+        }
+      ]
     },
     {
       "type": 3,
@@ -290,7 +515,34 @@
       "repository": {
         "url": "https://github.com/AxelFooley/portainer-app-templates",
         "stackfile": "stacks/Tdarr/docker-stack-worker-cpu_node.yml"
-      }
+      },
+      "env": [
+        {
+          "name": "TZ",
+          "label": "Timezone Default: Europe/Rome",
+          "default": "Europe/Rome"
+        },
+        {
+          "name": "SERVER_IP",
+          "label": "IP address of the Tdarr server",
+          "default": "127.0.0.1"
+        },
+        {
+          "name": "NODE_NAME",
+          "label": "Name of this Tdarr node",
+          "default": "tdarrNode"
+        },
+        {
+          "name": "LIBRARY_PATH",
+          "label": "Host path to media library",
+          "default": "/var/lib/tdarr/library"
+        },
+        {
+          "name": "TRANSCODE_CACHE_PATH",
+          "label": "Host path for storing transcoding cache, this must be accessible by all Tdarr nodes and the Tdarr server.",
+          "default": "/var/lib/tdarr/transcode_cache"
+        }
+      ]
     }
   ]
 }

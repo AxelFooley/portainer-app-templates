@@ -9,16 +9,16 @@ services:
     image: pihole/pihole:latest
     ports:
       - "53:53/tcp"
-      - "{{ LISTEN_IP }}:53:53/udp"
+      - "${LISTEN_IP}:53:53/udp"
       - "8080:80/tcp"
       - "443:443/tcp"
     networks:
       - pihole-dns
     dns:
-      - {{ EXTERNAL_DNS_SERVER }} # Like 8.8.8.8
+      - ${EXTERNAL_DNS_SERVER} # Like 8.8.8.8
     environment:
-      TZ: '{{ TIMEZONE }}'
-      WEBPASSWORD: '{{ ADMIN_PASSWORD }}'
+      TZ: "${TZ}"
+      WEBPASSWORD: '${ADMIN_PASSWORD}'
       PIHOLE_UID: 0
       DNSMASQ_USER: root
     # Volumes store your data between container upgrades
@@ -39,7 +39,7 @@ services:
     networks:
      - pihole-dns
     volumes:
-      - '{{ PATH_TO_UNBOUND_CONF_FILE }}:/opt/unbound/etc/unbound/unbound.conf:ro'
+      - '${PATH_TO_UNBOUND_CONF_FILE}:/opt/unbound/etc/unbound/unbound.conf:ro'
       - unbound-socket:/var/run/socket:rw
     restart: unless-stopped
 

@@ -8,13 +8,13 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ={{ TIMEZONE }}
+      - TZ=${TZ}
       - VERSION=docker
-      - PLEX_CLAIM={{ CLAIM_TOKEN}}
+      - PLEX_CLAIM=${PLEX_CLAIM}
     volumes:
       - plex-config:/config
-      - {{ PATH_TO_TV }}:/tv
-      - {{ PATH_TO_MOVIES }}:/movies
+      - ${PATH_TO_TV_FOLDER}:/tv
+      - ${PATH_TO_MOVIES_FOLDER}:/movies
     restart: unless-stopped
     devices:
       - '/dev/dri:/dev/dri'

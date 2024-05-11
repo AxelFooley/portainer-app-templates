@@ -10,11 +10,11 @@ services:
       - PUID=1000
       - PGID=1000
       - UMASK=002
-      - TZ={{ TIMEZONE }}
+      - TZ=${TZ}
     volumes:
       - qbittorrent-config:/config
-      - "{{ PATH_TO_DOWNLOADS_DIR }}:/downloads"
-      - "{{ PATH_TO_TORRENT_FILES }}:/torrents"
+      - "${PATH_TO_DOWNLOADS}:/downloads"
+      - "${PATH_TO_TORRENTS}:/torrents"
 
 volumes:
   qbittorrent-config:
