@@ -1,4 +1,6 @@
-[
+{
+    "version": "3",
+    "templates": [
   {
     "type": "1",
     "title": "Watchtower",
@@ -12,7 +14,7 @@
         "container": "/var/run/docker.sock",
         "bind": "/var/run/docker.sock",
         "readonly": true
-      }
+      } 
     ]
   },
   {
@@ -211,3 +213,4 @@
     }
   }
 ]
+}
