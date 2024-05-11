@@ -1,0 +1,35 @@
+version: "3.4"
+services:
+  tdarr-node:
+    container_name: tdarr-gpu-node
+    image: ghcr.io/haveagitgat/tdarr_node:latest
+    restart: unless-stopped
+    environment:
+      - TZ={{ TIMEZONE }}
+      - UMASK_SET=002
+      - nodeName={{ NODE_NAME }}
+      - serverIP={{ SERVER_IP }}
+      - serverPort=8266
+      - inContainer=true
+      - ffmpegVersion=6
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      - NVIDIA_VISIBLE_DEVICES=all
+
+    volumes:
+      - tdarr-worker-config:/app/configs
+      - tdarr-worker-logs:/app/logs
+      - {{ PATH_TO_MEDIA_LIBRARY }}:/media
+      - {{ PATH_TO_TRANSCODE_CACHE_DIR }}:/temp
+        
+    devices:
+      - /dev/dri:/dev/dri
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            count: all
+            capabilities: [gpu]
+volumes:
+  tdarr-worker-config:
+  tdarr-worker-logs:

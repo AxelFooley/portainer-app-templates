@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  autobrr:
+    container_name: autobrr
+    image: ghcr.io/autobrr/autobrr:latest
+    restart: unless-stopped
+    user: 1000:1000
+    environment:
+      - TZ={{ TIMEZONE}}
+    volumes:
+      - autobrr-config:/config
+    ports:
+      - 7474:7474

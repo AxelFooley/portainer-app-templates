@@ -1,0 +1,24 @@
+version: "3.4"
+services:
+  tdarr-node:
+    container_name: tdarr-cpu-node
+    image: ghcr.io/haveagitgat/tdarr_node:latest
+    restart: unless-stopped
+    environment:
+      - TZ={{ TIMEZONE }}
+      - UMASK_SET=002
+      - nodeName={{ NODE_NAME }}
+      - serverIP={{ SERVER_IP }}
+      - serverPort=8266
+      - inContainer=true
+      - ffmpegVersion=6
+
+    volumes:
+      - tdarr-worker-config:/app/configs
+      - tdarr-worker-logs:/app/logs
+      - {{ PATH_TO_MEDIA_LIBRARY }}:/media
+      - {{ PATH_TO_TRANSCODE_CACHE_DIR }}:/temp
+        
+volumes:
+  tdarr-worker-config:
+  tdarr-worker-logs:

@@ -1,0 +1,49 @@
+version: "3"
+
+# More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
+services:
+  pihole:
+    container_name: pihole
+    depends_on:
+      - unbound
+    image: pihole/pihole:latest
+    ports:
+      - "53:53/tcp"
+      - "{{ LISTEN_IP }}:53:53/udp"
+      - "8080:80/tcp"
+      - "443:443/tcp"
+    networks:
+      - pihole-dns
+    dns:
+      - {{ EXTERNAL_DNS_SERVER }} # Like 8.8.8.8
+    environment:
+      TZ: '{{ TIMEZONE }}'
+      WEBPASSWORD: '{{ ADMIN_PASSWORD }}'
+      PIHOLE_UID: 0
+      DNSMASQ_USER: root
+    # Volumes store your data between container upgrades
+    volumes:
+      - 'pihole-etc:/etc/pihole/'
+      - 'pihole-dnsmasq-etc:/etc/dnsmasq.d/'
+    # Recommended but not required (DHCP needs NET_ADMIN)
+    #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
+    #cap_add:
+    # - NET_ADMIN
+    restart: unless-stopped
+  
+  unbound:
+    container_name: unbound
+    image: "mvance/unbound-rpi:latest"
+    expose:
+      - "53"
+    networks:
+     - pihole-dns
+    volumes:
+      - '{{ PATH_TO_UNBOUND_CONF_FILE }}:/opt/unbound/etc/unbound/unbound.conf:ro'
+      - unbound-socket:/var/run/socket:rw
+    restart: unless-stopped
+
+networks:
+  pihole-dns:
+volumes:
+  unbound-socket:
