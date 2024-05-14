@@ -247,7 +247,7 @@
           "default": "/var/lib/plex/tv"
         },
         {
-          "name": "PATH_TO_MOVIE_FOLDER",
+          "name": "PATH_TO_MOVIES_FOLDER",
           "label": "Host path to Movies folder",
           "default": "/var/lib/plex/movies"
         }
