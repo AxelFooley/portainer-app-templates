@@ -60,6 +60,11 @@
           "name": "PATH_TO_PHOTOS",
           "label": "Host path to mount as photo library into the container",
           "default": "/var/lib/immich/photos"
+        },
+        {
+          "name": "PATH_TO_EXT_LIB",
+          "label": "Host path for importing photos from external library",
+          "default": "/var/lib/immich/ext_lib"
         }
       ]
     },
