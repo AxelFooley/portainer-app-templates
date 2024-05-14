@@ -33,7 +33,7 @@ services:
       - /dev/dri:/dev/dri
     command: ['start.sh', 'microservices']
     volumes:
-      - {{ PATH_TO_PHOTOS }}:/usr/src/app/upload
+      - ${ PATH_TO_PHOTOS }:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro
     depends_on:
       - redis
