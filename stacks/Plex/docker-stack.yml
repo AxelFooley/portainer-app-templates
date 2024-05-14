@@ -20,4 +20,4 @@ services:
       - '/dev/dri:/dev/dri'
 
 volumes:
-  alex-config:
+  plex-config:
