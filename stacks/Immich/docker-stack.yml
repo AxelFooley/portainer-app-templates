@@ -40,9 +40,9 @@ services:
       - ${PATH_TO_PHOTOS}:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro
     environment:
-      - DB_PASSWORD: password
-      - DB_USERNAME: psql_user
-      - DB_DATABASE_NAME: immich
+      DB_PASSWORD: password
+      DB_USERNAME: psql_user
+      DB_DATABASE_NAME: immich
     depends_on:
       - redis
       - database
