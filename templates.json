@@ -127,7 +127,7 @@
         },
         {
           "name": "PATH_TO_LETSENCRYPT",
-          "label": "Run database migrations on startup Default: True",
+          "label": "Host path for storing HTTPS certificates",
           "default": "/var/lib/npm/letsencrypt"
         }
       ]
@@ -242,12 +242,12 @@
           "default": ""
         },
         {
-          "name": "PLEX_UPATH_TO_TV_FOLDER",
+          "name": "PATH_TO_TV_FOLDER",
           "label": "Host path to TV Shows folder",
           "default": "/var/lib/plex/tv"
         },
         {
-          "name": "PLEX_PATH_TO_MOVIE_FOLDER",
+          "name": "PATH_TO_MOVIE_FOLDER",
           "label": "Host path to Movies folder",
           "default": "/var/lib/plex/movies"
         }
