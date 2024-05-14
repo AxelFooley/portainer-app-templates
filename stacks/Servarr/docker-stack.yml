@@ -70,7 +70,7 @@ services:
     image: jorenn92/maintainerr:latest
     container_name: maintainerr
     volumes:
-      - maintainerr_data/opt/data
+      - maintainerr_data:/opt/data
     environment:
       - TZ=${TZ}
     ports:
