@@ -96,3 +96,11 @@ networks:
   mediaserver:
     name: mediaserver
     external: true
+
+volumes:
+  radarr_config:
+  sonarr_config:
+  prowlarr_config:
+  recyclarr_config:
+  maintainerr_data:
+  bazarr_config:
