@@ -17,9 +17,9 @@ services:
       - ${PATH_TO_PHOTOS}:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro
     env:
-      - DB_PASSWORD: ${POSTGRES_PASSWORD}
-      - DB_USERNAME: ${POSTGRES_USER}
-      - DB_DATABASE_NAME: ${POSTGRES_DB}
+      - DB_PASSWORD: password
+      - DB_USERNAME: psql_user
+      - DB_DATABASE_NAME: immich
     ports:
       - 2283:3001
     depends_on:
@@ -40,9 +40,9 @@ services:
       - ${PATH_TO_PHOTOS}:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro
     env:
-      - DB_PASSWORD: ${POSTGRES_PASSWORD}
-      - DB_USERNAME: ${POSTGRES_USER}
-      - DB_DATABASE_NAME: ${POSTGRES_DB}
+      - DB_PASSWORD: password
+      - DB_USERNAME: psql_user
+      - DB_DATABASE_NAME: immich
     depends_on:
       - redis
       - database
