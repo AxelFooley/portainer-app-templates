@@ -548,6 +548,21 @@
           "default": "/var/lib/tdarr/transcode_cache"
         }
       ]
+    },
+    {
+      "type": 3,
+      "title": "Checkmk",
+      "description": "Checkmk is a comprehensive IT monitoring solution that enables system administrators, IT managers, and DevOps teams to identify issues across their entire IT infrastructure (servers, applications, networks, storage, databases) and act quickly to resolve them.",
+      "note": "Deploys Checkmk",
+      "categories": [
+        "infra"
+      ],
+      "platform": "linux",
+      "logo": "https://docs.checkmk.com/assets/images/docs_logo.png",
+      "repository": {
+        "url": "https://github.com/AxelFooley/portainer-app-templates",
+        "stackfile": "stacks/Checkmk/docker-stack.yml"
+      }
     }
   ]
 }

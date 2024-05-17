@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  app:
+    image: 'checkmk/check-mk-raw:2.3.0-latest'
+    restart: unless-stopped
+    ports:
+      - '8123:5000' # webserver port
+      - '8124:8000' # Agent Receiver port
+    volumes:
+      - monitoring:/omd/sites
+      - /etc/localtime:/etc/localtime:ro
+    tmpfs:
+      - /opt/omd/sites/cmk/tmp:uid=1000,gid=1000
+
+volumes:
+  monitoring:
