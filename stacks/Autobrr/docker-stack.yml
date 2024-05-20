@@ -9,6 +9,6 @@ services:
     environment:
       - TZ=${TZ}
     volumes:
-      - autobrr-config:/config
+      - ${AUTOBRR_CONFIG}:/config
     ports:
       - 7474:7474

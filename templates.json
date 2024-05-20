@@ -38,6 +38,11 @@
           "name": "TZ",
           "label": "Timezone Default: Europe/Rome",
           "default": "Europe/Rome"
+        },
+        {
+          "name": "AUTOBRR_CONFIG",
+          "label": "Host path for storing Autobrr configuration",
+          "default": "/var/lib/autobrr/config"
         }
       ]
     },
