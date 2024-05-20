@@ -284,9 +284,19 @@
           "default": "/var/lib/qbittorrent/downloads"
         },
         {
-          "name": "PATH_TO_TORRENTS",
+          "name": "PATH_TO_CONFIG",
           "label": "Host path to store torrent files",
-          "default": "/var/lib/qbittorrent/torrents"
+          "default": "/var/lib/qbittorrent/config"
+        },
+        {
+          "name": "WEBUI_PORT",
+          "label": "Port for the qBittorrent web interface",
+          "default": "8080"
+        },
+        {
+          "name": "TORRENTING_PORT",
+          "label": "Port for the qBittorrent torrenting service",
+          "default": "6881"
         }
       ]
     },

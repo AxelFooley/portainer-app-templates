@@ -1,20 +1,19 @@
-version: "3.7"
-
+---
 services:
   qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
     container_name: qbittorrent
-    image: cr.hotio.dev/hotio/qbittorrent
-    ports:
-      - "9090:8080"
     environment:
       - PUID=1000
       - PGID=1000
-      - UMASK=002
-      - TZ=${TZ}
+      - TZ={$TZ}
+      - WEBUI_PORT={$WEBUI_PORT}
+      - TORRENTING_PORT={$TORRENTING_PORT}
     volumes:
-      - qbittorrent-config:/config
-      - "${PATH_TO_DOWNLOADS}:/downloads"
-      - "${PATH_TO_TORRENTS}:/torrents"
-
-volumes:
-  qbittorrent-config:
+      - {$PATH_TO_CONFIG}:/config
+      - {$PATH_TO_DOWNLOADS}:/downloads
+    ports:
+      - {$WEBUI_PORT}:8080
+      - {$TORRENTING_PORT}:6881
+      - {$TORRENTING_PORT}:6881/udp
+    restart: unless-stopped
