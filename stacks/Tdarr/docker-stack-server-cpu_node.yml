@@ -10,8 +10,6 @@ services:
       - 8266:8266 # server port
     environment:
       - TZ=${TZ}
-      - PUID=${PUID}
-      - PGID=${PGID}
       - UMASK_SET=002
       - serverIP=${SERVER_IP}
       - serverPort=8266
