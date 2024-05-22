@@ -593,5 +593,6 @@
         "url": "https://github.com/AxelFooley/portainer-app-templates",
         "stackfile": "stacks/Mealie/docker-stack.yml"
       }
+    }
   ]
 }
