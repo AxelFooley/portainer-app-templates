@@ -578,6 +578,20 @@
         "url": "https://github.com/AxelFooley/portainer-app-templates",
         "stackfile": "stacks/Checkmk/docker-stack.yml"
       }
-    }
+    },
+    {
+      "type": 3,
+      "title": "Mealie",
+      "description": "Mealie is a self hosted recipe manager and meal planner with a RestAPI backend and a reactive frontend application built in Vue for a pleasant user experience for the whole family.",
+      "note": "Deploys Mealie",
+      "categories": [
+        "Other"
+      ],
+      "platform": "linux",
+      "logo": "https://avatars.githubusercontent.com/u/92342333",
+      "repository": {
+        "url": "https://github.com/AxelFooley/portainer-app-templates",
+        "stackfile": "stacks/Mealie/docker-stack.yml"
+      }
   ]
 }
