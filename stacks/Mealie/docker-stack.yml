@@ -2,11 +2,7 @@ version: "3.4"
 services:
   mealie:
     container_name: mealie
-    image: mealie:dev
-    build:
-      context: ../
-      target: production
-      dockerfile: ./Dockerfile
+    image: hkotel/mealie
     restart: always
     volumes:
       - mealie-data:/app/data/

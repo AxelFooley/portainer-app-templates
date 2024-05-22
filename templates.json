@@ -612,7 +612,7 @@
         },
         {
           "name": "SMTP_FROM_NAME",
-          "label": "Email address to send emails from"
+          "label": "Name to send emails from"
         },
         {
           "name": "AUTH_STRATEGY",
