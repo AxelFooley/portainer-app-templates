@@ -592,7 +592,38 @@
       "repository": {
         "url": "https://github.com/AxelFooley/portainer-app-templates",
         "stackfile": "stacks/Mealie/docker-stack.yml"
-      }
+      },
+      "env": [
+        {
+          "name": "SMTP_HOST",
+          "label": "SMTP server hostname"
+        },
+        {
+          "name": "SMTP_PORT",
+          "label": "SMTP server port"
+        },
+        {
+          "name": "SMTP_USER",
+          "label": "SMTP server username"
+        },
+        {
+          "name": "SMTP_PASSWORD",
+          "label": "SMTP server password"
+        },
+        {
+          "name": "SMTP_FROM_NAME",
+          "label": "Email address to send emails from"
+        },
+        {
+          "name": "AUTH_STRATEGY",
+          "label": "Authentication strategy. Options: TLS, SSL, NONE",
+          "default": "TLS"
+        },
+        {
+          "name": "SMTP_FROM_EMAIL",
+          "label": "Email address to send emails from"
+        }
+      ]
     }
   ]
 }
