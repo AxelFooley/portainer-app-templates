@@ -581,6 +581,48 @@
     },
     {
       "type": 3,
+      "title": "Deluge",
+      "description": "Deluge is a lightweight, Free Software, cross-platform BitTorrent client.",
+      "note": "Deploys Deluge",
+      "categories": [
+        "downloads"
+      ],
+      "platform": "linux",
+      "logo": "https://thumbnail.imgbin.com/11/20/17/imgbin-deluge-comparison-of-bittorrent-clients-seedbox-pier-francesco-orsini-XUzMhhKAJjPQxeApj4Cr87Mr4_t.jpg",
+      "repository": {
+        "url": "https://github.com/AxelFooley/portainer-app-templates",
+        "stackfile": "stacks/Deluge/docker-stack.yml"
+      },
+      "env": [
+        {
+          "name": "TZ",
+          "label": "Timezone Default: Europe/Rome",
+          "default": "Europe/Rome"
+        },
+        {
+          "name": "PATH_TO_DOWNLOADS",
+          "label": "Host path to store downloaded files",
+          "default": "/var/lib/deluge/downloads"
+        },
+        {
+          "name": "PATH_TO_CONFIG",
+          "label": "Host path to store Deluge configuration",
+          "default": "/var/lib/deluge/config"
+        },
+        {
+          "name": "WEBUI_PORT",
+          "label": "Port for the Deluge web interface",
+          "default": "8112"
+        },
+        {
+          "name": "TORRENTING_PORT",
+          "label": "Port for the Deluge torrenting service",
+          "default": "6881"
+        }
+      ]
+    },
+    {
+      "type": 3,
       "title": "Mealie",
       "description": "Mealie is a self hosted recipe manager and meal planner with a RestAPI backend and a reactive frontend application built in Vue for a pleasant user experience for the whole family.",
       "note": "Deploys Mealie",
