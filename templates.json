@@ -666,6 +666,32 @@
           "label": "Email address to send emails from"
         }
       ]
+    },
+    {
+      "type": 3,
+      "title": "DDClient",
+      "description": "DDClient is a Perl client used to update dynamic DNS entries for accounts on Dynamic DNS Network Service Provider.",
+      "note": "Deploys DDClient",
+      "categories": [
+        "network"
+      ],
+      "platform": "linux",
+      "logo": "https://ddns23.b-cdn.net/wp-content/uploads/2022/12/logo_dyndns_positivo.png",
+      "repository": {
+        "url": "https://github.com/AxelFooley/portainer-app-templates",
+        "stackfile": "stacks/DDClient/docker-stack.yml"
+      },
+      "env": [
+        {
+          "name": "TZ",
+          "label": "Timezone Default: Europe/Rome",
+          "default": "Europe/Rome"
+        },
+        {
+          "name": "PATH_TO_CONFIG",
+          "label": "Host path for config file",
+          "default": "/var/lib/ddns/config"
+        }
     }
   ]
 }
