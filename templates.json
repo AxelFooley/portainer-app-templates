@@ -692,6 +692,7 @@
           "label": "Host path for config file",
           "default": "/var/lib/ddns/config"
         }
+      ]
     }
   ]
 }
