@@ -16,7 +16,7 @@ services:
     environment:
       DB_PASSWORD: password
       DB_USERNAME: psql_user
-      DB_URL: ${POSTGRES_HOST}
+      DB_HOSTNAME: ${POSTGRES_HOST}
       DB_DATABASE_NAME: immich
       REDIS_HOSTNAME: ${REDIS_HOST}
       IMMICH_WORKERS_EXCLUDE: 'api'
