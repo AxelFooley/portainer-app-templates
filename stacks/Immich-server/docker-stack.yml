@@ -39,6 +39,8 @@ services:
   redis:
     container_name: immich_redis
     image: registry.hub.docker.com/library/redis:6.2-alpine@sha256:84882e87b54734154586e5f8abd4dce69fe7311315e2fc6d67c29614c8de2672
+    ports:
+      - 6379:6379
     restart: always
   
   database:
@@ -50,6 +52,8 @@ services:
       POSTGRES_DB: immich
     volumes:
       - immich-db-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
     restart: always
 
 volumes:

@@ -21,7 +21,3 @@ services:
       REDIS_HOSTNAME: ${REDIS_HOST}
       IMMICH_WORKERS_EXCLUDE: 'api'
     restart: always
-
-volumes:
-  immich-model-cache:
-  immich-db-data:
