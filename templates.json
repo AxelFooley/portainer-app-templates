@@ -48,9 +48,9 @@
     },
     {
       "type": 3,
-      "title": "Immich",
+      "title": "Immich Server",
       "description": "Immich is a simple and lightweight image hosting service",
-      "note": "Deploys an Immich instance.",
+      "note": "Deploys an Immich Server: API, Microservices, DBs and Machine learning nodes.",
       "categories": [
         "media"
       ],
@@ -58,7 +58,7 @@
       "logo": "https://play-lh.googleusercontent.com/nJsRIdtaot1-FKH3kiRem4kjqUU1-_0hd_64qZH0BgtzUecYfWLCDfpk2nNVul8hOrw",
       "repository": {
         "url": "https://github.com/AxelFooley/portainer-app-templates",
-        "stackfile": "stacks/Immich/docker-stack.yml"
+        "stackfile": "stacks/Immich-server/docker-stack.yml"
       },
       "env": [
         {
@@ -70,6 +70,58 @@
           "name": "PATH_TO_EXT_LIB",
           "label": "Host path for importing photos from external library",
           "default": "/var/lib/immich/ext_lib"
+        }
+      ]
+    },
+    {
+      "type": 3,
+      "title": "Immich Node",
+      "description": "Immich is a simple and lightweight image hosting service",
+      "note": "Deploys an Immich Microservices node, to use in a distributed computing architecture.",
+      "categories": [
+        "media"
+      ],
+      "platform": "linux",
+      "logo": "https://play-lh.googleusercontent.com/nJsRIdtaot1-FKH3kiRem4kjqUU1-_0hd_64qZH0BgtzUecYfWLCDfpk2nNVul8hOrw",
+      "repository": {
+        "url": "https://github.com/AxelFooley/portainer-app-templates",
+        "stackfile": "stacks/Immich-node/docker-stack.yml"
+      },
+      "env": [
+        {
+          "name": "PATH_TO_PHOTOS",
+          "label": "Host path to mount as photo library into the container",
+          "default": "/var/lib/immich/photos"
+        },
+        {
+          "name": "PATH_TO_EXT_LIB",
+          "label": "Host path for importing photos from external library",
+          "default": "/var/lib/immich/ext_lib"
+        },
+        {
+          "name": "POSTGRES_HOST",
+          "label": "Postgres host address",
+          "default": "127.0.0.1"
+        },
+        {
+          "name": "REDIS_HOST",
+          "label": "Redis host address",
+          "default": "127.0.0.1"
+        },
+        {
+          "name": "POSTGRES_USER",
+          "label": "Postgres user",
+          "default": "immich"
+        },
+        {
+          "name": "POSTGRES_PASSWORD",
+          "label": "Postgres password",
+          "default": "immich"
+        },
+        {
+          "name": "POSTGRES_DB",
+          "label": "Postgres database",
+          "default": "immich"
         }
       ]
     },
