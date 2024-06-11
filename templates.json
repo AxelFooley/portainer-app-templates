@@ -107,21 +107,6 @@
           "name": "REDIS_HOST",
           "label": "Redis host address",
           "default": "127.0.0.1"
-        },
-        {
-          "name": "POSTGRES_USER",
-          "label": "Postgres user",
-          "default": "immich"
-        },
-        {
-          "name": "POSTGRES_PASSWORD",
-          "label": "Postgres password",
-          "default": "immich"
-        },
-        {
-          "name": "POSTGRES_DB",
-          "label": "Postgres database",
-          "default": "immich"
         }
       ]
     },
