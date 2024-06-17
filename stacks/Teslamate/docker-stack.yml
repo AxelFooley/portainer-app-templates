@@ -56,3 +56,9 @@ volumes:
   teslamate-mosquitto-conf:
   teslamate-mosquitto-data:
   teslamate-import:
+
+networks:
+  default:
+    driver: bridge
+    driver_opts:
+      com.docker.network.driver.mtu: 1420
