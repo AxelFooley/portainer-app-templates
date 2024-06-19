@@ -8,7 +8,7 @@ services:
       - unbound
     image: pihole/pihole:latest
     ports:
-      - "53:53/tcp"
+      - "${LISTEN_IP}:53:53/tcp"
       - "${LISTEN_IP}:53:53/udp"
       - "8080:80/tcp"
       - "443:443/tcp"
