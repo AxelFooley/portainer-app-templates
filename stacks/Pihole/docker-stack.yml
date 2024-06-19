@@ -47,3 +47,5 @@ networks:
   pihole-dns:
 volumes:
   unbound-socket:
+  pihole-etc:
+  pihole-dnsmasq-etc:
