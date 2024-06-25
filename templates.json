@@ -255,11 +255,6 @@
           "name": "PATH_TO_UNBOUND_CONF_FILE",
           "label": "Host path where Unbound configuration file is stored",
           "default": "/var/lib/unbound/unbound.conf"
-        },
-        {
-          "name": "UNBOUND_IP",
-          "label": "Static IPv4 to assign to Unbound container, this must be set into Pihole as upstream DNS Server",
-          "default": "172.20.0.2"
         }
       ]
     },
