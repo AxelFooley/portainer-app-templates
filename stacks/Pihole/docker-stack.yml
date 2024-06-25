@@ -39,7 +39,7 @@ services:
     expose:
       - "53"
     networks:
-      dns:
+      pihole-dns:
         ipv4_address: 172.0.120.3 
     volumes:
       - '${PATH_TO_UNBOUND_CONF_FILE}:/opt/unbound/etc/unbound/unbound.conf:ro'
