@@ -48,12 +48,12 @@ services:
 
 networks:
   pihole-dns:
-  ipam:
-    driver: default
-    config:
-      - subnet: 172.0.120.0/24
-        gateway: 172.0.120.1
-        ip_range: 172.0.120.1/24
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.0.120.0/24
+          gateway: 172.0.120.1
+          ip_range: 172.0.120.1/24
 volumes:
   unbound-socket:
   pihole-etc:
