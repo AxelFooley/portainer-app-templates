@@ -12,6 +12,7 @@ services:
       - radarr_config:/config
       - ${PATH_TO_MOVIES}:/movies # Path to your Plex movies folder
       - ${PATH_TO_DOWNLOADS}:/downloads # Path to your qBittorrent downloads folder
+      - ${PATH_TO_BACKUP}:/backup # Path to your backup folder
     ports:
       - 7878:7878
     restart: unless-stopped
@@ -27,6 +28,7 @@ services:
       - sonarr_config:/config
       - ${PATH_TO_TV}:/tv # Path to your Plex TV Shows folder
       - ${PATH_TO_DOWNLOADS}:/downloads # Path to your qBittorrent downloads folder
+      - ${PATH_TO_BACKUP}:/backup # Path to your backup folder
     ports:
       - 8989:8989
     restart: unless-stopped
@@ -40,6 +42,7 @@ services:
       - TZ=${TZ}
     volumes:
       - prowlarr_config:/config
+      - ${PATH_TO_BACKUP}:/backup # Path to your backup folder
     ports:
       - 9696:9696
     restart: unless-stopped

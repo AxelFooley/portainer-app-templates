@@ -371,6 +371,11 @@
           "name": "PATH_TO_DOWNLOADS",
           "label": "Host path where bittorrent downloads are stored",
           "default": "/var/lib/qbittorrent/downloads"
+        },
+        {
+          "name": "PATH_TO_BACKUP",
+          "label": "Host path to store backup of db and configuration files",
+          "default": "/var/lib/servarr/backups"
         }
       ]
     },
